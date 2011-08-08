@@ -6,6 +6,23 @@
 
 
 " For pathogen.vim: auto load all plugins in .vim/bundle
+let g:pathogen_disabled = []
+" call add(g:pathogen_disabled, 'autoclose')
+" call add(g:pathogen_disabled, 'command-t')
+" call add(g:pathogen_disabled, 'javacomplete')
+" call add(g:pathogen_disabled, 'matchit')
+" call add(g:pathogen_disabled, 'nerdcommenter')
+" call add(g:pathogen_disabled, 'nerdtree')
+" call add(g:pathogen_disabled, 'OmniCppComplete')
+" call add(g:pathogen_disabled, 'snipmate')
+" call add(g:pathogen_disabled, 'supertab')
+" call add(g:pathogen_disabled, 'surround')
+" call add(g:pathogen_disabled, 'vcscommand')
+" call add(g:pathogen_disabled, 'vim-latex')
+" call add(g:pathogen_disabled, 'VisIncr')
+" call add(g:pathogen_disabled, 'xmledit')
+call add(g:pathogen_disabled, 'yankring')	" Screws with Ctrl-P binding
+
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -16,19 +33,21 @@ set bs=2		" allow backspacing over everything in insert mode
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set autoread		" auto read when file is changed from outside
-
+set foldmethod=marker
+set nu
 
 filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
+" filetype indent on    " Enable filetype-specific indenting
+" The below line screws with my pasting ...
 filetype plugin on    " Enable filetype-specific plugins
 
 
 " auto reload vimrc when editing it
-autocmd! bufwritepost .vimrc source ~/.vimrc
-
-
-syntax on		" syntax highlight
-set hlsearch		" search highlighting
+ autocmd! bufwritepost .vimrc source ~/.vimrc
+ 
+ 
+ syntax on		" syntax highlight
+ set hlsearch		" search highlighting
 
 if has("gui_running")	" GUI color and font settings
   set guifont=Osaka-Mono:h20
@@ -50,13 +69,13 @@ set wildmenu            " wild char completion menu
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
 
-set autoindent		" auto indentation
+" set autoindent		" auto indentation
 set incsearch		" incremental search
 set nobackup		" no *~ backup files
-set copyindent		" copy the previous indentation on autoindenting
+" set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
-set smarttab		" insert tabs on the start of a line according to context
+" set smarttab		" insert tabs on the start of a line according to context
 
 " disable sound on errors
 set noerrorbells
@@ -66,8 +85,8 @@ set tm=500
 
 " TAB setting{
    set expandtab        "replace <TAB> with spaces
-   set softtabstop=3 
-   set shiftwidth=3 
+   set softtabstop=4 
+   set shiftwidth=4 
 
    au FileType Makefile set noexpandtab
 "}      							
@@ -96,7 +115,7 @@ endfunction
 
 
 " C/C++ specific settings
-autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
+" autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 
 "Restore cursor to file position in previous editing session
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -116,30 +135,30 @@ endfun
 " USEFUL SHORTCUTS
 "--------------------------------------------------------------------------- 
 " set leader to ,
-let mapleader=","
-let g:mapleader=","
+" let mapleader=","
+" let g:mapleader=","
 
 "replace the current word in all opened buffers
 map <leader>r :call Replace()<CR>
 
 " open the error console
-map <leader>cc :botright cope<CR> 
+" map <leader>cc :botright cope<CR> 
 " move to next error
-map <leader>] :cn<CR>
+" map <leader>] :cn<CR>
 " move to the prev error
-map <leader>[ :cp<CR>
+" map <leader>[ :cp<CR>
 
 " --- move around splits {
 " move to and maximize the below split 
-map <C-J> <C-W>j<C-W>_
+" map <C-J> <C-W>j<C-W>_
 " move to and maximize the above split 
-map <C-K> <C-W>k<C-W>_
+" map <C-K> <C-W>k<C-W>_
 " move to and maximize the left split 
-nmap <c-h> <c-w>h<c-w><bar>
+" nmap <c-h> <c-w>h<c-w><bar>
 " move to and maximize the right split  
-nmap <c-l> <c-w>l<c-w><bar>
-set wmw=0                     " set the min width of a window to 0 so we can maximize others 
-set wmh=0                     " set the min height of a window to 0 so we can maximize others
+" nmap <c-l> <c-w>l<c-w><bar>
+" set wmw=0                     " set the min width of a window to 0 so we can maximize others 
+" set wmh=0                     " set the min height of a window to 0 so we can maximize others
 " }
 
 " move around tabs. conflict with the original screen top/bottom
@@ -155,12 +174,12 @@ map <C-t><C-t> :tabnew<CR>
 map <C-t><C-w> :tabclose<CR> 
 
 " ,/ turn off search highlighting
-nmap <leader>/ :nohl<CR>
+" nmap <leader>/ :nohl<CR>
 
 " Bash like keys for the command line
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-cnoremap <C-K>      <C-U>
+" cnoremap <C-A>      <Home>
+" cnoremap <C-E>      <End>
+" cnoremap <C-K>      <C-U>
 
 " ,p toggles paste mode
 nmap <leader>p :set paste!<BAR>set paste?<CR>
@@ -293,7 +312,9 @@ endif
 
 
 " --- Command-T
-let g:CommandTMaxHeight = 15
+" let g:CommandTMaxHeight = 15
 
 " --- SuperTab
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "context"
+"
+
