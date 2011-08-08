@@ -11,7 +11,7 @@ let g:pathogen_disabled = []
 " call add(g:pathogen_disabled, 'command-t')
 " call add(g:pathogen_disabled, 'javacomplete')
 " call add(g:pathogen_disabled, 'matchit')
-" call add(g:pathogen_disabled, 'nerdcommenter')
+call add(g:pathogen_disabled, 'nerdcommenter') " Screws with <Leader>cc binding in vcscommand
 " call add(g:pathogen_disabled, 'nerdtree')
 " call add(g:pathogen_disabled, 'OmniCppComplete')
 " call add(g:pathogen_disabled, 'snipmate')
@@ -34,7 +34,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set autoread		" auto read when file is changed from outside
 set foldmethod=marker
-set nu
+set nu                  " shows line numbers
 
 filetype on           " Enable filetype detection
 " filetype indent on    " Enable filetype-specific indenting
@@ -124,11 +124,11 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 "--------------------------------------------------------------------------- 
 " Tip #382: Search for <cword> and replace with input() in all open buffers 
 "--------------------------------------------------------------------------- 
-fun! Replace() 
-    let s:word = input("Replace " . expand('<cword>') . " with:") 
-    :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge' 
-    :unlet! s:word 
-endfun 
+" fun! Replace() 
+"     let s:word = input("Replace " . expand('<cword>') . " with:") 
+"     :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge' 
+"     :unlet! s:word 
+" endfun 
 
 
 "--------------------------------------------------------------------------- 
@@ -212,21 +212,6 @@ cmap cd. lcd %:p:h
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
 "--------------------------------------------------------------------------- 
-
-" Ctrl-[ jump out of the tag stack (undo Ctrl-])
-map <C-[> <ESC>:po<CR>
-
-" ,g generates the header guard
-map <leader>g :call IncludeGuard()<CR>
-fun! IncludeGuard()
-   let basename = substitute(bufname(""), '.*/', '', '')
-   let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
-   call append(0, "#ifndef " . guard)
-   call append(1, "#define " . guard)
-   call append( line("$"), "#endif // for #ifndef " . guard)
-endfun
-
-
 
 " Enable omni completion. (Ctrl-X Ctrl-O)
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -318,3 +303,5 @@ endif
 " let g:SuperTabDefaultCompletionType = "context"
 "
 
+" Allows you to sudo save a file in vim!
+cmap w!! w !sudo tee % >/dev/null
