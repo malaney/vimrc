@@ -1,3 +1,9 @@
+" Lint-check a php file, uses a custom php.ini where error_reporting = E_ALL
+" Set to your path
+" noremap <C-N> :!/usr/local/bin/php -c /path/to/custom/php.ini -l %<CR>
+
+" Execute php script within vim
+" noremap <C-R> :!/usr/local/bin/php -c /path/to/custom/php.ini %<CR>
 
 " {{{ Alignment
 
