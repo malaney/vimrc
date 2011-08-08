@@ -1,8 +1,8 @@
-vgod's vimrc
+Malaney's vimrc (Fork of vgod's vimrc https://github.com/vgod/vimrc)
 ============
-Author: Tsung-Hsiang (Sean) Chang <vgod@vgod.tw>
+Author: Malaney J. Hill <malaney@gmail.com>
 
-Fork me on GITHUB  https://github.com/vgod/vimrc.
+Fork me on GITHUB  https://github.com/malaney/vimrc.
 
 HOW TO INSTALL
 --------------
@@ -80,6 +80,8 @@ PLUGINS
 * [OmniCppComplete](http://www.vim.org/scripts/script.php?script_id=1520): C/C++ omni-completion with ctags database.
 
 * [JavaComplete](http://www.vim.org/scripts/script.php?script_id=1785): Java Omni-completion.
+
+* [VCSCommand](http://www.vim.org/scripts/script.php?script_id=90): Extremely useful vim front-end to git/svn/hg/bzr/cvs
 
 
 Language specific supports
