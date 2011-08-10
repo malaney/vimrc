@@ -7,6 +7,7 @@ ln -s .vim/gvimrc .gvimrc
 export GIT_SSL_NO_VERIFY=true
 
 # Install all submodules
+cd .vim
 git submodule update --init
 
 # xmledit
