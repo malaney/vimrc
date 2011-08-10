@@ -54,4 +54,4 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/PDV"]
 	path = bundle/PDV
-	url = git://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git

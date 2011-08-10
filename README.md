@@ -83,6 +83,8 @@ PLUGINS
 
 * [VCSCommand](http://www.vim.org/scripts/script.php?script_id=90): Extremely useful vim front-end to git/svn/hg/bzr/cvs
 
+* [PDV--phpDocumentor-for-Vim](http://www.vim.org/scripts/script.php?script_id=1355): Auto-generates doc blocks for PHP code
+
 
 Language specific supports
 --------------------------

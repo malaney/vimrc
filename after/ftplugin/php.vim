@@ -5,9 +5,17 @@
 " Execute php script within vim
 " noremap <C-R> :!/usr/local/bin/php -c /path/to/custom/php.ini %<CR>
 
+
+
+" Map <ctrl>+p to single line mode documentation (in insert and command mode)
+inoremap <buffer> <C-D> :call PhpDocSingle()<CR>
+nnoremap <buffer> <C-D> :call PhpDocSingle()<CR>
+" " Map <ctrl>+p to multi line mode documentation (in visual mode)
+vnoremap <buffer> <C-D> :call PhpDocRange()<CR>
+
 " {{{ Alignment
 
-vnoremap <C-a> :call PhpAlign()<CR>
+vnoremap <buffer> <C-a> :call PhpAlign()<CR>
 
 func! PhpAlign() range
    let l:paste = &g:paste
