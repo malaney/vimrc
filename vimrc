@@ -1,8 +1,8 @@
-" vgod's vimrc
-" Tsung-Hsiang (Sean) Chang <vgod@vgod.tw>
-" Fork me on GITHUB  https://github.com/vgod/vimrc
+" malaney's vimrc
+" Malaney J. Hill <malaney@gmail.com>
+" Fork me on GITHUB  https://github.com/malaney/vimrc
 
-" read https://github.com/vgod/vimrc/blob/master/README.md for more info
+" read https://github.com/vgod/malaney/blob/master/README.md for more info
 
 
 " For pathogen.vim: auto load all plugins in .vim/bundle
@@ -305,3 +305,8 @@ endif
 
 " Allows you to sudo save a file in vim!
 cmap w!! w !sudo tee % >/dev/null
+
+
+" Map ctrl-s to Ack
+" inoremap <buffer> <C-S> :Ack<CR>
+" nnoremap <buffer> <C-S> :Ack<CR>
