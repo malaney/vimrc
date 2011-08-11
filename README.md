@@ -2,20 +2,21 @@ Malaney's vimrc (Fork of vgod's vimrc https://github.com/vgod/vimrc)
 ============
 Author: Malaney J. Hill <malaney@gmail.com>
 
-Fork me on GITHUB  https://github.com/malaney/vimrc.
+This vimrc compiles some of the best ideas I've seen vimrc's across the internet including Tobias Schlitt's VIM 
+integration for PHP and other's.  It relies heavily on Tim Pope's Pathogen plugin to facilitate inclusion of all 
+plugins within their own sub-directories within the "~/.vim/bundle" sub-directory.
 
 HOW TO INSTALL
 --------------
 
+0. Backup your original ~/.vim and ~/.vimrc
+        $ mv ~/.vim ~/.vimbkup && mv ~/.vimrc ~/vimrc.bak && ~/.gvimrc ~/gvimrc.bak
+
 1. Check out from github
 
-        $ git clone https://github.com/vgod/vimrc ~/.vim
+        $ git clone https://github.com/malaney/vimrc ~/.vim
         $ cd ~/.vim
-        $ git submodule update --init
-
-2. Install ~/.vimrc and ~/.gvimrc
-
-        $ ./install-vimrc.sh
+        $ sh install-vimrc.sh
 
 3. (Optional, if you want Command-T) Compile the Command-T plugin
 
@@ -23,6 +24,20 @@ HOW TO INSTALL
         $ ruby extconf.rb
         $ make
   
+WORKING WITH PLUGIN BUNDLES
+---------------------------
+To add a bundle 
+    - git submodule add <git/repo/url> bundle/<bundlename>
+    - git submodule update --init
+    - git commit
+To remove a bundle
+    - Remove from .gitmodules
+    - git rm --cached bundle/<bundlename>
+    - git commit
+To upgrade bundle
+    - cd bundle/<bundlename>
+    - git pull
+
 UPGRADE PLUGIN BUNDLES
 ----------------------
 
