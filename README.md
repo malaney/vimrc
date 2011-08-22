@@ -100,6 +100,8 @@ PLUGINS
 
 * [PDV--phpDocumentor-for-Vim](http://www.vim.org/scripts/script.php?script_id=1355): Auto-generates doc blocks for PHP code
 
+* [Vim-Fuguitive](ihttp://www.vim.org/scripts/script.php?script_id=2975):  A Git wrapper for vim
+
 
 Language specific supports
 --------------------------
