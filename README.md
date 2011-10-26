@@ -14,7 +14,7 @@ HOW TO INSTALL
 
 1. Check out from github
 
-        $ git clone https://github.com/malaney/vimrc ~/.vim
+        $ git clone git://github.com/malaney/vimrc.git ~/.vim
         $ cd ~/.vim
         $ sh install-vimrc.sh
 
