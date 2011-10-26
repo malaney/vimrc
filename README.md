@@ -2,7 +2,7 @@ Malaney's vimrc (Fork of vgod's vimrc https://github.com/vgod/vimrc)
 ============
 Author: Malaney J. Hill <malaney@gmail.com>
 
-This vimrc compiles some of the best ideas I've seen vimrc's across the internet including Tobias Schlitt's VIM 
+This vimrc compiles some of the best ideas I've seen in vimrc's across the net including Tobias Schlitt's VIM 
 integration for PHP and other's.  It relies heavily on Tim Pope's Pathogen plugin to facilitate inclusion of all 
 plugins within their own sub-directories within the "~/.vim/bundle" sub-directory.
 
