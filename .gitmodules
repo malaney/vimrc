@@ -61,3 +61,6 @@
 [submodule "bundle/tail"]
 	path = bundle/tail
 	url = https://github.com/vim-scripts/Tail-Bundle.git
+[submodule "bundle/DrawIt"]
+	path = bundle/DrawIt
+	url = git://github.com/vim-scripts/DrawIt.git
