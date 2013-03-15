@@ -24,7 +24,7 @@ call add(g:pathogen_disabled, 'nerdcommenter') " Screws with <Leader>cc binding 
 call add(g:pathogen_disabled, 'yankring')	" Screws with Ctrl-P binding
 
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" call pathogen#helptags()
 
 " General Settings
 
@@ -310,3 +310,11 @@ cmap w!! w !sudo tee % >/dev/null
 " Map ctrl-s to Ack
 " inoremap <buffer> <C-S> :Ack<CR>
 " nnoremap <buffer> <C-S> :Ack<CR>
+
+" Read in ctags for symfony development
+set tags=~/.vim/mytags/framework
+
+" Paste Toggle
+set pastetoggle=<F10>
+nnoremap <silent> <F10> :setlocal paste!<CR>i
+autocmd InsertLeave <buffer> se nopaste
