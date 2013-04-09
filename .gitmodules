@@ -76,3 +76,6 @@
 [submodule "bundle/php_getset"]
 	path = bundle/php_getset
 	url = https://github.com/vim-scripts/php_getset.vim
+[submodule "bundle/ZoomWin"]
+	path = bundle/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin.git
