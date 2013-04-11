@@ -182,7 +182,7 @@ map <C-t><C-w> :tabclose<CR>
 " cnoremap <C-K>      <C-U>
 
 " ,p toggles paste mode
-nmap <leader>p :set paste!<BAR>set paste?<CR>
+" nmap <leader>p :set paste!<BAR>set paste?<CR>
 
 " allow multiple indentation/deindentation in visual mode
 vnoremap < <gv
@@ -315,6 +315,35 @@ cmap w!! w !sudo tee % >/dev/null
 set tags=~/.vim/mytags/framework
 
 " Paste Toggle
-set pastetoggle=<F10>
-nnoremap <silent> <F10> :setlocal paste!<CR>i
-autocmd InsertLeave <buffer> se nopaste
+" set pastetoggle=<F10>
+" nnoremap <silent> <F10> :setlocal paste!<CR>i
+" autocmd InsertLeave <buffer> se nopaste
+"
+"
+"
+let b:phpgetset_getterTemplate = 
+  \ "\n" .
+  \ "   /**\n" .
+  \ "    * Get %varname%.\n" .
+  \ "    *\n" .
+  \ "    * @return %varname%.\n" .
+  \ "    */\n" .
+  \ "   public function %funcname%()\n" .
+  \ "   {\n" .
+  \ "       return $this->%varname%;\n" .
+  \ "   }"
+
+let b:phpgetset_setterTemplate = 
+ \ "\n" .
+ \ "   /**\n" .
+ \ "    * Set %varname%.\n" .
+ \ "    *\n" .
+ \ "    * @param %varname% the value to set.\n" . 
+ \ "    */\n" .
+ \ "   public function %funcname%($%varname%)\n" .
+ \ "   {\n" .
+ \ "       $this->%varname% = $%varname%;\n" .
+ \ "       return $this;\n" .
+ \ "   }"
+
+
